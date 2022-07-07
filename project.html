@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.368"><meta>
+    <!-- 모바일 360 * 640 --> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+            crossorigin="anonymous"></script>
+
+    <title>webProgrammingProject</title>
+
+    <!-- 스타일  -->
+
+    <style>
+
+        body { 
+            margin: 0; padding: 0; 
+            font-family: NanumGothic;
+        }
+
+        /* bar */
+
+        .top_bar {
+            background-color:  #09213d;
+            height: 10%;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+        }
+
+        .top_bar > .logo { 
+            margin: 4%; 
+            width:100px;
+            height:100px;
+        }
+        
+        .nav_img {
+            float: right;
+            margin: 4%;
+            width:100px;
+            height:100px;
+            z-index: 200;
+        }
+
+        .nav_bar {
+            z-index: 25;
+        }
+
+        .nav_bar > .close {
+            float: right;
+            margin: 6%;
+            width:50px;
+            height:50px;
+        }
+
+        .nav_bar > .close > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .nav_bar {
+            background-color:  white;
+            list-style: none;
+            
+            width: 50%;
+            height: 100%;
+            
+            position: absolute;
+            top:0;
+        }
+
+        .nav_bar a {
+            color: black;
+            font-size: 2.5em;
+            display: block;
+            text-decoration: none;
+
+            margin-left: 20%;
+            padding: 2%;
+            margin-top: 20%;
+        }
+
+        .nav_bar > .logo2 { display: none; }
+
+        
+        .menu_bg{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            position: absolute;
+            top:0;
+            display: none;
+        }
+
+        @media screen and (min-width:1080px) {
+            body { 
+                margin: 0; padding: 0; 
+                font-family: NanumGothic;
+            }
+
+            .nav_img { display: none; }
+            .top_bar { display: none;}
+
+            .nav_bar > .logo2 {
+                display: block;
+                margin: 10%;
+                width:100px;
+                height:100px;
+
+                z-index: 150;
+            }
+
+            .nav_bar {
+                background-color:  #09213d;
+
+                position: fixed;
+                left: 0; top: 0; bottom: 0;
+                width: 20%;
+                
+                z-index: 100;
+            }
+
+            .nav_bar a {
+                display: block;
+                text-decoration: none;
+                color: white;
+
+                top: 300px;
+                margin-left: 16%;
+                padding: 2%;
+                font-size: 2.3em; 
+                margin-top: 10%;
+
+            }
+
+            .nav_bar > .close { display: none; }
+            
+        }
+
+        /* Home */
+
+        #Home {
+            background-color: #79779d;
+
+            padding-top: 10%;
+            height: 1000px;
+        }
+
+        #Home > h1 {
+            color: white;
+
+            text-align: center;
+            line-height: 1000px;
+            font-size: 4em;
+        }
+
+        @media screen and (min-width:1080px) {
+            #Home {
+                background-color: #79779d;
+                margin-left: 20%;
+                width: 80%;
+
+                height: 600px;
+            }
+
+            #Home > h1 {
+                color: white;
+                margin-top: -10%;
+
+                text-align: center;
+                line-height: 600px;
+                font-size: 4em;
+            }
+        }
+
+        /* About_me */
+
+        #About_me {
+            background-color: #6abab5;
+
+            height: 900px;
+        }
+
+        #About_me > h1 {
+            color: black;
+
+            font-size: 3em;
+            margin: 0;
+            padding: 10% 0 0 10%;
+        }
+
+        #About_me > .profile{
+            width: 350px;
+            height: 400px;
+            
+            float: left;
+            padding: 10%;
+        }
+
+        #About_me > h2 {
+            
+            padding-top: 16%;
+
+            font-size: 2.4em;
+        }
+
+        @media screen and (min-width:1080px) {
+            #About_me {
+                background-color: #6abab5;
+                margin-left: 20%;
+                width: 80%;
+
+                height: 600px;
+            }
+
+            #About_me > h1 {
+                color: black;
+
+                font-size: 3em;
+                margin: 0;
+                padding: 3% 0 0 10%;
+            }
+
+            #About_me > .profile{
+                width: 300px;
+                height: 350px;
+                
+                float: left;
+                margin-top: -5%;
+            }
+
+            #About_me > h2 {
+                
+                padding-top: 8%;
+
+                font-size: 2.4em;
+            }
+        }
+
+        /* License */
+
+        #License {
+            background-color: white;
+        }
+
+        #License > h1 {
+            color: black;
+
+            font-size: 3em;
+            margin: 0;
+            padding: 2%;
+        }
+
+        #License > .ITQ {
+            background-color: #0c496a;
+            height: 300px;
+            width: 100%;
+
+        }
+
+        #License > .ITQ > h2 {
+            color: white;
+            display: inline-block;
+
+            font-size: 2em;
+            margin: 0;
+            padding-top: 5%;
+            padding-left: 15%;
+        }
+
+        #License > .ITQ > h3 {
+            color: white;
+            display: inline-block;
+
+            font-size: 1.2em;
+            padding-top: 2%;
+            padding-left: 18%;
+        }
+
+        #License > .ITQ > .ITQ_pic {
+            width: 200px;
+            height: 300px;
+            
+            margin-top: -8.7%;
+            padding-right: 20%;
+            float: right;
+        }
+
+        #License > .Graphic {
+            background-color: #e5f0fa;
+            height: 300px;
+            
+
+        }
+
+        #License > .Graphic > h2 {
+            color: black;
+            display: inline-block;
+
+            font-size: 2em;
+            margin: 0;
+            padding-top: 5%;
+            padding-left: 60%;
+            ;
+        }
+
+        #License > .Graphic > h3 {
+            color: black;
+            display: inline-block;
+
+            font-size: 1.2em;
+            padding-left: 65%;
+            overflow: auto;
+        }
+
+        /* 이미지 슬라이드 시작 */
+
+        #License .slidebox { 
+            
+            max-width:200px; 
+            position:relative;
+             
+            margin-left: 8%;
+            margin-top: -24%;
+
+        }
+
+        #License .slidebox .slidelist { 
+            position:relative; 
+            white-space:nowrap; 
+            width: 200px;
+            font-size:0; 
+            overflow:hidden; }
+
+        #License .slidebox .slidelist .slideitem {
+            position:relative; 
+            display:inline-block; 
+            vertical-align:middle;
+            width: 100%;
+            transition:all 1s;}
+
+        #License .slidebox .slidelist .slideitem > a {
+            display:block; 
+            width:auto; 
+            position:relative; }
+
+        #License .slidebox .slidelist .slideitem > a img {
+            margin: 0;
+            width: 200px;
+            height: 300px;
+        }
+
+        .slidebox .slide-control [class*="control"] label {
+            position:absolute; 
+            z-index:10; 
+            top:50%; 
+            transform:translateY(-50%); 
+            padding:20px; 
+            border-radius:50%; 
+            cursor:pointer;}
+
+        .slidebox .slide-control [class*="control"] label.prev {
+            
+            left: -50px;
+            transform:rotate(-180deg); 
+            background: url('blue.png') center center  / 50% no-repeat;
+
+        }
+
+        .slidebox .slide-control [class*="control"] label.next {
+            
+            right: -50px;
+            background: url('blue.png') center center  / 50% no-repeat;
+        }
+
+        [name="slide"] {display:none;}
+        #slide01:checked ~ .slidelist .slideitem {left:0;}
+        #slide02:checked ~ .slidelist .slideitem {left:-200px;}
+        #slide03:checked ~ .slidelist .slideitem {left:-400px;}
+        #slide04:checked ~ .slidelist .slideitem {left:-600px;}
+
+        .slide-control [class*="control"] {display:none;}
+        #slide01:checked ~ .slide-control .control01 {display:block;}
+        #slide02:checked ~ .slide-control .control02 {display:block;}
+        #slide03:checked ~ .slide-control .control03 {display:block;}
+        #slide04:checked ~ .slide-control .control04 {display:block;}
+
+        /* 이미지 슬라이드 끝 */
+
+        #License > .Computer {
+            background-color: #0c496a;
+            height: 300px;
+        }
+
+        #License > .Computer > h2 {
+            color: white;
+            display: inline-block;
+
+            font-size: 2em;
+            margin: 0;
+            padding-top: 5%;
+            padding-left: 15%;
+        }
+
+        #License > .Computer > h3 {
+            color: white;
+            display: inline-block;
+
+            font-size: 1.2em;
+            padding-top: 2%;
+            padding-left: 18%;
+        }
+
+        #License > .Computer > .Computer_pic {
+            width: 200px;
+            height: 300px;
+            
+            margin-top: -8.7%;
+            padding-right: 20%;
+            float: right;
+        }
+
+        #License > .Desktop_pic { display: none;}
+
+        @media screen and (min-width:1080px) {
+            #License {
+                background-color: white;
+                margin-left: 20%;
+                width: 80%;
+            }
+
+            #License > h1 {
+                color: black;
+
+                font-size: 3em;
+                margin: 0;
+                text-align: left;
+                padding: 2%;
+            }
+
+            #License > .ITQ {
+                background-color: #0c496a;
+                height: 300px;
+                float: left;
+
+                width: 50%;
+
+            }
+
+            #License > .ITQ > h2 {
+                color: white;
+
+                font-size: 2em;
+                margin: 0;
+                padding-top: 5%;
+                padding-left: 15%;
+            }
+
+            #License > .ITQ > h3 {
+                color: white;
+
+                font-size: 1.2em;
+                padding-top: 2%;
+                padding-left: 18%;
+            }
+
+            #License > .ITQ > .ITQ_pic { display: none; }
+
+            #License > .Graphic {
+                background-color: #e5f0fa;
+                height: 300px;
+                float: right;
+
+                width: 50%;
+            }
+
+            #License  .Graphic .slidebox { display: none;}
+
+            #License > .Graphic > h2 {
+                color: black;
+
+                font-size: 2em;
+                margin: 0;
+                padding-top: 5%;
+                margin-left: -50%;
+                
+            }
+
+            #License > .Graphic > h3 {
+                color: black;
+
+                font-size: 1.2em;
+                margin: 1%;
+                padding-top: 4%;
+                padding-left: 18%;
+                
+            }
+
+            #License > .Computer {
+                background-color: #e5f0fa;
+                
+                height: 300px;
+                float: left;
+
+                width: 50%;
+            }
+
+            #License > .Computer > h2 {
+                color: black;
+
+                font-size: 2em;
+                margin: 0;
+                padding-top: 5%;
+                padding-left: 15%;
+            }
+                
+            #License > .Computer > h3 {
+                color: black;
+                font-size: 1.2em;
+                padding-top: 2%;
+                padding-left: 18%;
+            }
+
+            #License > .Computer .Computer_pic {
+                display: none;
+            }
+
+            #License > .Desktop_pic {
+                background-color: #0c496a;
+                height: 300px;
+                float: right;
+
+                display: block;
+
+                width: 50%;
+            }
+
+            /* 데스크톱 이미지 슬라이드 시작 */
+
+            #License .slidebox { 
+                max-width:200px;
+                margin-top: 0.1%;
+                margin-left: 25%;
+                
+                position:relative;
+                
+            }
+            #License .slidebox .slidelist { 
+                position:relative; 
+                white-space:nowrap; 
+                font-size:0;
+                width: 200px;
+                overflow:hidden;
+            }
+            #License .slidebox .slidelist .slideitem {
+                background-color: #0c496a;
+                position:relative; 
+                display:inline-block; 
+                vertical-align:middle;
+                width: 100%;
+                transition:all 1s;}
+
+            #License .slidebox .slidelist .slideitem > a {
+                display:block;
+                width: 200px;
+                position:relative;}
+            #License .slidebox .slidelist .slideitem > a img {
+                width: 200px;
+                height: 300px;
+            }
+
+            .slidebox .slide-control [class*="control"] label {
+                position:absolute; 
+                z-index:10; 
+                top:50%; 
+                transform:translateY(-50%); 
+                padding:20px; 
+                border-radius:50%; 
+                cursor:pointer;}
+
+            .slidebox .slide-control{
+                padding: 0;
+            }
+
+            .slidebox .slide-control [class*="control"] label.prev {
+                width: 60px;
+                height: 60px;
+                left: -50px;
+                transform:rotate(-180deg); 
+                background: url('white.png') center center / 50% no-repeat;}
+            
+            .slidebox .slide-control [class*="control"] label.next {
+                width: 60px;
+                height: 60px;
+                margin-right: -38%;
+                margin-top: 20%;
+                right: -50px;
+                background: url('white.png') center center / 50% no-repeat;}
+
+            [name="slide"] {display:none;}
+            #slide01:checked ~ .slidelist .slideitem {left:0;}
+            #slide02:checked ~ .slidelist .slideitem {left:-200px;}
+            #slide03:checked ~ .slidelist .slideitem {left:-400px;}
+            #slide04:checked ~ .slidelist .slideitem {left:-600px;}
+            #slide05:checked ~ .slidelist .slideitem {left:-800px;}
+            #slide06:checked ~ .slidelist .slideitem {left:-1000px;}
+
+            .slide-control [class*="control"] {display:none;}
+            #slide01:checked ~ .slide-control .control01 {display:block;}
+            #slide02:checked ~ .slide-control .control02 {display:block;}
+            #slide03:checked ~ .slide-control .control03 {display:block;}
+            #slide04:checked ~ .slide-control .control04 {display:block;}
+            #slide05:checked ~ .slide-control .control05 {display:block;}
+            #slide06:checked ~ .slide-control .control06 {display:block;}
+
+            /* 데스크톱 이미지 슬라이드 끝 */
+
+        }
+
+        /* Experience */
+        
+        #Experience {
+            background-color: white;
+        }
+
+        #Experience > h1 {
+            color: black;
+
+            font-size: 3em;
+            margin: 0;
+            padding: 2%;
+        }
+
+        #Experience > .content1 {
+            background-color: #79779d;
+
+            height: 350px;
+        }
+
+        #Experience > .content1 > h2 {
+            color: white;
+            font-size: 2em;
+            display: inline-block;
+
+            margin: 0;
+            padding-top: 9%;
+            padding-left: 15%;
+        }
+
+        #Experience > .content1 > h3 {
+            color: white;
+            font-size: 1.2em;
+            display: inline-block;
+
+            margin: 0;
+            padding-top: 2%;
+            padding-left: 18%;
+        }
+
+        #Experience > .content1 > .content1_pic {
+            width: 200px;
+            height: 300px;
+            
+            margin-top: -10%;
+            padding-right: 20%;
+            float: right;
+        }
+
+        #Experience > .content2 {
+            background-color: #c6ddf3;
+
+            height: 350px;
+        }
+
+        #Experience > .content2 > h2 {
+            font-size: 2em;
+            display: inline-block;
+
+            margin: 0;
+            padding-top: 9%;
+            padding-left: 15%;
+        }
+
+        #Experience > .content2 > h3 {
+            font-size: 1.2em;
+            display: inline-block;
+
+            margin: 0;
+            padding-top: 2%;
+            padding-left: 18%;
+        }
+
+        #Experience > .content2 > .content2_pic {
+            width: 200px;
+            height: 300px;
+            
+            margin-top: -10%;
+            padding-right: 20%;
+            float: right;
+        }
+
+        @media screen and (min-width:1080px) {
+            #Experience {
+                background-color: white;
+                margin-left: 20%;
+                width: 80%;
+            }
+
+            #Experience > h1 {
+                color: black;
+
+                font-size: 3em;
+                margin: 0;
+                padding: 2%;
+            }
+
+            #Experience > .content1 {
+                background-color: #79779d;
+
+                height: 600px;
+                float: left;
+
+                width: 50%;
+            }
+
+            #Experience > .content1 > h2 {
+                color: white;
+                font-size: 2em;
+                display: block;
+
+                text-align: center;
+                margin-left: -15%;
+                margin-right: 5%;
+            }
+
+            #Experience > .content1 > h3 {
+                color: white;
+                font-size: 1.2em;
+                display: block;
+                
+                padding-top: 5%;
+                
+                text-align: center;
+                margin-left: -15%;
+                margin-right: 8%;
+            }
+
+            #Experience > .content1 > .content1_pic {
+                width: 200px;
+                height: 300px;
+                display: block;
+                
+                margin-top: 5%;
+                margin-left: -50%;
+                margin-right: 20%;
+                
+            }
+
+            #Experience > .content2 {
+                background-color: #c6ddf3;
+
+                height: 600px;
+                float: right;
+
+                width: 50%;
+            }
+
+            #Experience > .content2 > h2 {
+                color: black;
+                font-size: 2em;
+                display: block;
+
+                text-align: center;
+                margin-left: -15%;
+                margin-right: 4%;
+            }
+
+            #Experience > .content2 > h3 {
+                color: black;
+                font-size: 1.2em;
+                display: block;
+                
+                padding-top: 5%;
+                
+                text-align: center;
+                margin-left: -15%;
+                margin-right: 8%;;
+            }
+
+            #Experience > .content2 > .content2_pic {
+                width: 200px;
+                height: 300px;
+                display: block;
+                
+                margin-top: 5%;
+                margin-left: -50%;
+                margin-right: 20%;
+                
+            }
+        }
+
+        /* Interest */
+        
+        #Interest {
+            background-color: white;
+        }
+
+        #Interest > h1 {
+            color: black;
+
+            font-size: 3em;
+            margin: 0;
+            padding: 2%;
+        }
+
+        #Interest > .fast{
+            background-color: #ea7a79;
+
+            height: 300px;
+        }
+
+        #Interest > .fast > h2 {
+            font-size: 2em;
+            text-align: center;
+            line-height: 200px;
+            
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #Interest > .fast > h3 {
+            text-align: center;
+            font-size: 1.5em;
+
+            margin: -5% 0 0 0;
+            padding: 0;
+        }
+
+        /*
+
+        #Interest > .fast > .B_arrow_1 {
+            width: 100px;
+            height: 100px;
+
+            transform:rotate(90deg);
+
+            margin: -18% 0 0 44%;
+            padding: 0;
+        }
+
+        */
+
+        #Interest > .present{
+            background-color: #79779d;
+
+            height: 300px;
+        }
+
+        #Interest > .present > h2 {
+            color: white;
+
+            font-size: 2em;
+            text-align: center;
+            line-height: 200px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #Interest > .present > h3 {
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+            
+
+            margin: -5% 0 0 0;
+            padding: 0;
+        }
+
+        /*
+
+        #Interest > .present > .B_arrow_2 {
+            width: 100px;
+            height: 100px;
+
+            transform:rotate(90deg);
+
+            margin: -18% 0 0 44%;
+            padding: 0;
+        }
+
+        */
+
+        #Interest > .future{
+            background-color: #6abab5;
+
+            height: 300px;
+        }
+        
+        #Interest > .future > h2 {
+            font-size: 2em;
+            text-align: center;
+            line-height: 200px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #Interest > .future > h3 {
+            text-align: center;
+            font-size: 1.5em;
+
+            margin: -5% 0 0 0;
+            padding: 0;
+        }
+
+        @media screen and (min-width:1080px) {
+            #Interest {
+                background-color: white;
+                margin-left: 20%;
+                width: 80%;
+            }
+
+            #Interest > h1 {
+                color: black;
+
+                font-size: 3em;
+                margin: 0;
+                padding: 2%;
+            }
+
+            #Interest > .fast{
+                background-color: #ea7a79;
+
+                height: 600px;
+                float: left;
+
+                width: 33%;
+            }
+
+            #Interest > .fast > h2 {
+                font-size: 2em;
+                text-align: center;
+                line-height: 300px;
+
+                margin: 0;
+                padding: 0;
+            }
+
+            #Interest > .fast > .B_arrow_1 {
+                width: 100px;
+                height: 100px;
+                transform:rotate(0);
+                margin:  0 0 0 85%;
+                padding: 0;
+            }
+
+            #Interest > .present{
+                background-color: #79779d;
+
+                height: 600px;
+                float: left;
+
+                width: 33%;
+            }
+
+            #Interest > .present > h2 {
+                color: white;
+
+                font-size: 2em;
+                text-align: center;
+                line-height: 300px;
+
+                margin: 0;
+                padding: 0;
+            }
+
+            #Interest > .present > h4 {
+                color: white;
+            }
+
+            #Interest > .present > .B_arrow_2 {
+                width: 100px;
+                height: 100px;
+                transform:rotate(0);
+                margin: 0 0 0 85%;
+                padding: 0;
+            }
+
+            #Interest > .future{
+                background-color: #6abab5;
+
+                height: 600px;
+                float: left;
+
+                width: 33%;
+            }
+            
+            #Interest > .future > h2 {
+                font-size: 2em;
+                text-align: center;
+                line-height: 300px;
+
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+
+        /* Board */
+
+        #Board {
+            background-color: white;
+        }
+
+        #Board > h1 {
+            color: black;
+
+            font-size: 3em;
+            margin: 0;
+            padding: 2%;
+        }
+
+        #Board .PostList {
+            margin: 0 auto;
+            
+            width: 95%;
+        }
+
+
+        #Board .PostList p {
+            font-size: 1.5em;
+            height: 60px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+        }
+
+        
+        #Board .PostList p:nth-child(2n)  {
+            
+            background-color: #c2c1c2;         
+        }
+
+        #Board .PostList p:nth-child(2n+1)  {
+            
+            background-color: #dddcdd;
+        }
+
+        #Board .PostList p .recontent{
+            border: 1.5px solid black;
+            text-align: center;
+            line-height: 25px;
+
+            width: 12%;
+            height: 25px;
+
+            float: right;
+            
+        }
+
+        #Board .PostList p .delete{
+            border: 1.5px solid black;
+            text-align: center;
+            line-height: 25px;
+
+            width: 12%;
+            height: 25px;
+
+            float: right;
+        }
+        
+        #Board .Board .name {
+            width: 100px;
+            height: 30px;
+
+            font-size: 1.2em;
+            display: inline-block;
+
+            margin-left: 2%;
+        }
+
+        #Board .Board .PW {
+            width: 100px;
+            height: 30px;
+            padding-left: 10%;
+            display: inline-block;
+
+            font-size: 1.2em;
+        }
+
+        #Board .Board textarea {
+            margin-left: 2%;
+
+            width: 95%;
+            height: 180px;
+
+            font-size: 0.5em;
+        }
+
+        #Board .Board .section_footer_btn {
+            border: 2px solid #c2c1c2;
+            margin-top: 10px;
+            border-radius: 5px;
+
+            text-align: center;
+            line-height: 30px;
+
+            width: 12%;
+            height: 30px;
+
+            margin-right: 3%;
+            float: right;
+
+        }
+
+        @media screen and (min-width:1080px) {
+            #Board {
+                background-color: white;
+                margin-left: 20%;
+                width: 80%;
+            }
+
+            #Board > h1 {
+                color: black;
+
+                font-size: 3em;
+                margin: 0;
+                padding: 2%;
+            }
+
+            #Board .PostList p {
+                font-size: 2em;
+                height: 70px;
+                width: 95%;
+                
+            }
+
+            #Board .PostList p:nth-child(2n)  {
+                background-color: #c2c1c2; 
+                        
+            }
+
+            #Board .PostList p:nth-child(2n+1)  {
+                background-color: #dddcdd;
+               
+            }
+
+            #Board .PostList p .recontent{
+                border: 1.5px solid black;
+                text-align: center;
+                line-height: 30px;
+
+                width: 12%;
+                height: 30px;
+
+                float: right;
+                
+            }
+
+            #Board .PostList p .delete{
+                border: 1.5px solid black;
+                text-align: center;
+                line-height: 30px;
+
+                width: 12%;
+                height: 30px;
+
+                float: right;
+            }
+
+            #Board .Board {
+                margin-top: 30px;
+            }
+
+            #Board .Board .name {
+                width: 10%;
+                height: 40px;
+
+                font-size: 1.2em;
+
+                margin-left: 2%;
+            }
+
+            #Board .Board .PW {
+                width: 10%;
+                height: 40px;
+                margin-left: -80px;
+
+                font-size: 1.2em;
+            }
+
+            #Board .Board textarea {
+                margin-left: 2%;
+
+                width: 95%;
+                height: 200px;
+
+                font-size: 1.2em;
+            }
+
+            #Board .Board .section_footer_btn {
+                margin-top: 10px;
+                margin-right: 5%;
+                text-align: center;
+                border-radius: 5px;
+
+            }
+        }
+
+    </style>
+
+        
+<script>
+
+    $(document).ready(function(){
+ 
+        $('.nav_img').on('click', function(){
+            $('.menu_bg').show(); 
+            $('.nav_bar').show().animate({
+                right: 0
+            });  
+        });
+        $('.nav_bar>.close').on('click', function(){
+            $('.menu_bg').hide(); 
+            $('.nav_bar').animate({
+                right: '-' + 20 + '%'
+                        },function(){
+                            $('.nav_bar').hide();          
+                        });  
+        });
+
+        var windowWidth = $( window ).width();
+      
+        if (windowWidth <=360) {
+            $('.nav_bar>.close').click();
+        } else {
+            
+        }
+
+        //슬라이드 이미지
+        //https://13akstjq.github.io/css/2019/08/13/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94-%EB%A7%8C%EB%93%A4%EA%B8%B0.html
+        //https://www.youtube.com/watch?v=JryRu5zby3A
+    
+    });
+
+    var arrBoardList = [];
+    var writer;
+    var pw;
+    var writing;
+    var  boxListTag;
+
+    // 글을 글 목록(배열)에 저장하는 함수
+    function saveWriting() {
+        writer = document
+        .getElementsByClassName("name")[0]
+        .querySelector("input").value;
+        pw = document
+        .getElementsByClassName("PW")[0]
+        .querySelector("input").value;
+        writing = document
+        .getElementsByClassName("content")[0]
+        .querySelector("textarea").value;
+
+        if (writer.length <= 0 || writing.length <= 0) {
+        alert("등록할 글의 작성자와 내용을 입력해주세요!");
+        return;
+        }
+
+        // 비밀번호는 4자로 입력했는지 확인
+        if (pw.length != 4) {
+            alert("비밀번호는 4자로만 입력해주세요!");
+            return;
+        }
+
+        arrBoardList.push({
+            writer: writer,
+            pw: pw,
+            writing: writing,
+        });
+
+        console.log(arrBoardList);
+
+        displayBoardList();
+
+        //초기화
+        document
+            .getElementsByClassName("name")[0]
+            .querySelector("input").value = "";
+        document.getElementsByClassName("PW")[0].querySelector("input").value =
+        "";
+        document
+            .getElementsByClassName("content")[0]
+            .querySelector("textarea").value = "";
+    }
+
+    function displayBoardList() {
+        var contactTag = document.getElementById("contact");
+        boxListTag = contactTag.getElementsByClassName("PostList");
+       
+        boxListTag[0].innerHTML = "";
+
+        for (var i = 0; i < arrBoardList.length; i++) {
+        const el = arrBoardList[i];
+
+        boxListTag[0].innerHTML +=
+            '<p> <span class="ListContent">' +
+            el.writing +
+            '</span>  <span class="ListName"> ' +
+            el.writer +
+            '</span> <br>' + 
+            '<span class="ListPW"> <input type="password" placeholder="비밀번호"> </span>' +
+            '<span class="recontent">수정</span>' +
+            '<span class="delete">삭제</span>'
+            '</p> ';
+        }
+
+        //post - create
+        fetch("http://localhost:3000/posts", {
+            method: "POST",
+            body: JSON.stringify({
+                writer: writer,
+                pw: pw,
+                writing: writing,
+            }),
+            headers: {
+                "content-type": "application/json; charset=UTF-8",
+            },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+        fetch("http://localhost:3000/posts")
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+        
+    }
+    /*
+    //확대
+    function Expanding() {
+        $('.ListContent').on('click',function(){
+            $('p').css('height','200px');
+
+            $('<input type="password" placeholder="비밀번호">')
+            .css({
+                width: '10%',
+                height: '30px',
+                marginTop: '-20px'
+            }).appendTo('span');
+            $('<div class="recontent" onclick="reContnet()">수정</div>')
+            .css({
+                display: "inline-block",
+                textAlign: 'center',
+                borderRadius: '5px'
+
+            }).appendTO('span');
+            $('<div class="delete" onclikc="deleteData()">삭제</div>')
+            .css({
+                display: "inline-block",
+                textAlign: 'center',
+                borderRadius: '5px'
+
+            }).appendTO('span');
+        });
+    }
+    */
+    $(document).ready(function(){
+
+        if(Object(boxListTag).length != 0 ){
+            var listInPW = document.getElementsByClassName("ListPW")[0].querySelector("input");
+            return listInPW;
+        }
+
+        $('.recontent').on('click', function(){
+            if (pw == listInPW.value){
+
+                 //put - update
+                fetch("http://localhost:3000/posts", {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        writer: writer,
+                        writing: writing,
+                    }),
+                    headers: {
+                        "content-type": "application/json; charset=UTF-8",
+                    },
+                })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+
+                //get - read 
+                fetch("http://localhost:3000/posts")
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+
+                }
+            
+        })
+    })
+    
+        
+    $(document).ready(function(){
+        $('.delete').on('click', function(){
+            if (pw == listInPW.value){
+
+                $(this).parent().parent().remove();
+
+                //delete
+                fetch("http://localhost:3000/post", {
+                    method: "DELETE",  
+                })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+
+                //get - read 
+                fetch("http://localhost:3000/posts")
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+
+                }
+            
+        })
+    }
+        
+    )
+        
+
+
+
+    </script>
+    
+</head>
+<body>
+
+    <div class="top_bar">
+        <img class="logo" src="logo.png" alt="logo">
+
+        <a href="#">
+            <img class="nav_img" src="nav.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="menu_bg"></div>
+    
+    <div class="nav_bar">
+
+        <img class="logo2" src="logo.png" alt="logo">
+        <img class="close" 
+             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+">
+        <a href="#Home">Home</a><br>
+        <a href="#About_me">Profile</a><br>
+        <a href="#License">License</a> <br>
+        <a href="#Experience">Experience</a> <br>
+        <a href="#Interest">Personality</a> <br>
+        <a href="#Board">Board</a> 
+
+    </div>
+    
+    
+
+    <!-- Home -->
+
+    <div id="Home">
+        <h1> 오늘 하루도 열심히 살자 </h1>
+    </div>
+
+    <!-- About_me -->
+    
+    <div id="About_me">
+        <h1> Profile </h1>
+        
+        <img class="profile" src="profile.png" alt="profile">
+        
+        <h2> 문혜정 <br><br> 글로벌미디어학부 <br><br> 컴퓨터만 13년 외길 </h2>
+        
+    </div>
+
+    <!-- License -->
+    
+    <div id="License">
+        <h1> License </h1>
+
+        <div class="ITQ">
+            <h2>ITQ</h2><br>
+            <h3> 아래한글 <br><br> 한글파워포인트 <br><br> 한글엑셀 </h3>
+            
+            <img class="ITQ_pic" src="license_ITQ.PNG" alt="자격">
+        </div>
+
+        <div class="Graphic">
+            <h2>Graphic</h2><br>
+            <h3> 그래픽기술자격 <br><br> 그래픽기술자격일러스트 <br><br> 그래픽스운용기능사 </h3>
+
+            <div class="slidebox">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <a><img src="license_PS.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="license_L.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="license_CAD.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="Graphic.jpg"></a>
+                    </li>
+                    
+                </ul>
+                <div class="slide-control">
+                    <div class="control01">
+                        <label for="slide04" class="prev"></label>
+                        <label for="slide02" class="next"></label>
+                    </div>
+                    <div class="control02">
+                        <label for="slide01" class="prev"></label>
+                        <label for="slide03" class="next"></label>
+                    </div>
+                    <div class="control03">
+                        <label for="slide02" class="prev"></label>
+                        <label for="slide04" class="next"></label>
+                    </div>
+                    <div class="control04">
+                        <label for="slide03" class="prev"></label>
+                        <label for="slide01" class="next"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Computer">
+            <h2>Computer Specialist</h2><br>
+            <h3>컴퓨터활용능력 1급</h3>
+
+            <img class="Computer_pic" src="Computer.PNG" alt="자격">
+        </div>
+
+        <div class="Desktop_pic">
+            
+            <div class="slidebox">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+                <input type="radio" name="slide" id="slide05">
+                <input type="radio" name="slide" id="slide06">
+
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <a><img src="license_ITQ.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="license_PS.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="license_L.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="license_CAD.PNG"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="Graphic.jpg"></a>
+                    </li>
+                    <li class="slideitem">
+                        <a><img src="Computer.PNG"></a>
+                    </li>
+                </ul>
+                <div class="slide-control">
+                    <div class="control01">
+                        <label for="slide06" class="prev"></label>
+                        <label for="slide02" class="next"></label>
+                    </div>
+                    <div class="control02">
+                        <label for="slide01" class="prev"></label>
+                        <label for="slide03" class="next"></label>
+                    </div>
+                    <div class="control03">
+                        <label for="slide02" class="prev"></label>
+                        <label for="slide04" class="next"></label>
+                    </div>
+                    <div class="control04">
+                        <label for="slide03" class="prev"></label>
+                        <label for="slide05" class="next"></label>
+                    </div>
+                    <div class="control05">
+                        <label for="slide04" class="prev"></label>
+                        <label for="slide06" class="next"></label>
+                    </div>
+                    <div class="control06">
+                        <label for="slide05" class="prev"></label>
+                        <label for="slide01" class="next"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+
+    <!-- Experience -->
+    
+    <div id="Experience">
+        <h1> Experience </h1>
+
+        <div class="content1">
+            <h2>활동 과정</h2><br>
+            <h3> 부천 마스코트 핸썹의 활용한 굿즈 제작 <br><br> 포토샵과 일러스트 활용 </h3>
+
+            <img class="content1_pic" src="bucheon.PNG" alt="경험">
+        </div>
+
+        <div class="content2">
+            <h2>결과</h2><br>
+            <h3> 2021 부천 관광 대학생 아이디어 공모전 <br><br> 장려상 </h3>
+
+            <img class="content2_pic" src="contest.jpg" alt="경험">
+        </div>
+    </div>
+
+    <!-- Interest -->
+    
+    <div id="Interest">
+        <h1> Personality </h1>
+
+        <div class="fast">
+            <h2> 독립적인 </h2> <br>
+            <h3> 다른 이들을 신경쓰지 않고 <br> 홀로 해 나간다 </h3>
+
+            <!--  <img class="B_arrow_1" src="blue.png" alt="화살표"> -->
+        </div>
+
+        <div class="present">
+            <h2> 잘 들어주는 </h2> <br>
+            <h3> 말 없이 조용한 편이지만 <br> 상대의 말은 잘 들어준다 </h3>
+
+            <!-- <img class="B_arrow_2" src="blue.png" alt="화살표"> -->
+        </div>
+        
+        <div class="future">
+            <h2> 경험적인 </h2> <br>
+            <h3> 다른 이들의 말보다는 <br> 직접 경험하면서 배워간다 </h3>
+        </div>
+    </div>
+
+    <!-- Board -->
+    
+    <div id="Board">
+        <h1> Board </h1>
+        <section id="contact">
+            <div class="PostList">
+                
+                
+            </div>
+        </section>
+        
+
+        <div class="Board">
+            <div class="name">
+                <input type="text" placeholder="이름">
+            </div>
+            <div class="PW">
+                <input type="password" placeholder="비밀번호">
+            </div>
+            <br>
+            <div class="content">
+                <textarea class="content" placeholder="내용"></textarea>
+            </div>
+            
+            <br>
+            <div class="btn_wrap" type="submit" value="글쓰기">
+                    <div class="section_footer_btn" onclick="saveWriting()">글쓰기</div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
